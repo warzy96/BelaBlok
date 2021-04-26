@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BelaBlok</string>
+    <string name="decrement_button_content_description">Decrement button</string>
+    <string name="increment_button_content_description">Increment button</string>
+    <string name="turn_menu_save">Spremi</string>
+    <string name="played_games_list_menu_settigns_title">Settings</string>
+    <string name="current_game_to_turn_container_transition_name">turn_root_transition_name</string>
+    <string name="played_games_new_game_to_current_game_transition_name">played_games_new_game_to_current_game_transition_name</string>
+</resources>

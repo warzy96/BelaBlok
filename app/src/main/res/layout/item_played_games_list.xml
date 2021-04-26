@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/common_item_corner_radius"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/item_played_games_list_mi"
+            style="@style/ScoreItemHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/item_played_games_list_common_margin"
+            android:layout_marginTop="@dimen/item_played_games_list_common_margin"
+            android:text="Mi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/item_played_games_list_vi"
+            style="@style/ScoreItemHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/item_played_games_list_common_margin"
+            android:layout_marginEnd="@dimen/item_played_games_list_common_margin"
+            android:text="Vi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_played_games_list_mi_score"
+            style="@style/ScoreItemScoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/item_played_games_list_common_margin"
+            android:layout_marginBottom="@dimen/item_played_games_list_common_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_played_games_list_mi"
+            tools:text="1320" />
+
+        <TextView
+            android:id="@+id/item_played_games_list_vi_score"
+            style="@style/ScoreItemScoreText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/item_played_games_list_common_margin"
+            android:layout_marginBottom="@dimen/item_played_games_list_common_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_played_games_list_vi"
+            tools:text="999" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/divider_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

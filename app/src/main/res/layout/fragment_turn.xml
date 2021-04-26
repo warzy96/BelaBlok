@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/turn_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:transitionName="@string/current_game_to_turn_container_transition_name">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/turn_app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/turn_toolbar"
+                style="@style/Toolbar"
+                android:layout_width="match_parent"
+                app:menu="@menu/turn_menu"
+                app:navigationIcon="@drawable/ic_arrow_back_24"
+                app:title="Pisanje" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/turn_mi_title"
+                style="@style/ScoreHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="MI"
+                app:layout_constraintEnd_toStartOf="@id/turn_vi_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/turn_total_score_mi"
+                style="@style/ScoreHeaderScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                app:layout_constraintEnd_toEndOf="@id/turn_mi_title"
+                app:layout_constraintStart_toStartOf="@id/turn_mi_title"
+                app:layout_constraintTop_toBottomOf="@id/turn_mi_title"
+                tools:text="1234" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/turn_total_score_vi"
+                style="@style/ScoreHeaderScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                app:layout_constraintEnd_toEndOf="@id/turn_vi_title"
+                app:layout_constraintStart_toStartOf="@id/turn_vi_title"
+                app:layout_constraintTop_toBottomOf="@id/turn_vi_title"
+                tools:text="1234" />
+
+            <View
+                android:id="@+id/turn_divider"
+                style="@style/HorizontalDivider"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/turn_total_score_mi" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/turn_total_label"
+                style="@style/Overline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ukupno"
+                app:layout_constraintBottom_toBottomOf="@id/turn_total_score_mi"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/turn_total_score_mi" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/turn_vi_title"
+                style="@style/ScoreHeader"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="VI"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/turn_mi_title"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/turn_mi_score_container"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Igra"
+        app:layout_constraintEnd_toEndOf="@id/turn_mi_scroll_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/turn_app_bar_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/turn_mi_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/turn_vi_score_container"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Igra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/turn_vi_scroll_view"
+        app:layout_constraintTop_toBottomOf="@id/turn_app_bar_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/turn_vi_score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="24sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ScrollView
+        android:id="@+id/turn_mi_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fadingEdgeLength="24dp"
+        android:fillViewport="true"
+        android:requiresFadingEdge="vertical"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/turn_vi_scroll_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/turn_mi_score_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@drawable/linear_layout_divider"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:showDividers="middle">
+
+            <com.hr.warzy.bela.view.StepView
+                android:id="@+id/turn_twenties_mi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:step_title="20" />
+
+            <com.hr.warzy.bela.view.StepView
+                android:id="@+id/turn_fifties_mi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:step_title="50" />
+
+            <com.hr.warzy.bela.view.StepView
+                android:id="@+id/turn_hundreds_mi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:step_title="100" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/TurnCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hr.warzy.bela.view.AnimatedRippleLayout
+                    android:id="@+id/turn_is_hundred_fifty_mi"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/TurnCardSelectableText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="150"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/TurnCardSelectableText.TurnCardSelectedText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="150"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </com.hr.warzy.bela.view.AnimatedRippleLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/TurnCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hr.warzy.bela.view.AnimatedRippleLayout
+                    android:id="@+id/turn_is_two_hundred_mi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TurnCardSelectableText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/TurnCardSelectableText.TurnCardSelectedText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </com.hr.warzy.bela.view.AnimatedRippleLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/TurnCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hr.warzy.bela.view.AnimatedRippleLayout
+                    android:id="@+id/turn_is_belot_mi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TurnCardSelectableText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Belot"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/TurnCardSelectableText.TurnCardSelectedText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Belot"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </com.hr.warzy.bela.view.AnimatedRippleLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/turn_vi_scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fadingEdgeLength="24dp"
+        android:fillViewport="true"
+        android:requiresFadingEdge="vertical"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/turn_mi_scroll_view"
+        app:layout_constraintTop_toBottomOf="@id/turn_vi_score_container">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:divider="@drawable/linear_layout_divider"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:showDividers="middle">
+
+            <com.hr.warzy.bela.view.StepView
+                android:id="@+id/turn_twenties_vi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:step_title="20" />
+
+            <com.hr.warzy.bela.view.StepView
+                android:id="@+id/turn_fifties_vi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:step_title="50" />
+
+            <com.hr.warzy.bela.view.StepView
+                android:id="@+id/turn_hundreds_vi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:step_title="100" />
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/TurnCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hr.warzy.bela.view.AnimatedRippleLayout
+                    android:id="@+id/turn_is_hundred_fifty_vi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        style="@style/TurnCardSelectableText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="150"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/TurnCardSelectableText.TurnCardSelectedText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="150"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </com.hr.warzy.bela.view.AnimatedRippleLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/TurnCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hr.warzy.bela.view.AnimatedRippleLayout
+                    android:id="@+id/turn_is_two_hundred_vi"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/TurnCardSelectableText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        style="@style/TurnCardSelectableText.TurnCardSelectedText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="200"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </com.hr.warzy.bela.view.AnimatedRippleLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/TurnCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.hr.warzy.bela.view.AnimatedRippleLayout
+                    android:id="@+id/turn_is_belot_vi"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        style="@style/TurnCardSelectableText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Belot"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+
+                        style="@style/TurnCardSelectableText.TurnCardSelectedText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Belot"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </com.hr.warzy.bela.view.AnimatedRippleLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

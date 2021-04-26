@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="com.google.android.material.card.MaterialCardView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Belot" />
+
+        <ImageView
+            android:id="@+id/decrement"
+            style="@style/IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/decrement_button_content_description"
+            app:layout_constraintEnd_toStartOf="@id/value"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:srcCompat="@drawable/ic_decrement_24" />
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:text="0"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/increment"
+            app:layout_constraintStart_toEndOf="@id/decrement"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <ImageView
+            android:id="@+id/increment"
+            style="@style/IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/increment_button_content_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/value"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:srcCompat="@drawable/ic_add_24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>

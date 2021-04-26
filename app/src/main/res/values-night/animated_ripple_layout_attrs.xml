@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AnimatedRippleLayout">
+        <attr name="rippleAnimationDuration" format="integer" />
+        <attr name="rippleStyle" format="enum">
+            <enum name="ExpandExpand" value="0" />
+            <enum name="ExpandCollapse" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

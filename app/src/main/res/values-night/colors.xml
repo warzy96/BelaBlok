@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_text_color">#fafafa</color>
+    <color name="divider_color">#fafafa</color>
+    <color name="primary_light">#b794f6</color>
+    <color name="colorAccent">#C8EE8E</color>
+    <color name="current_game_end_of_turn_background">#000000</color>
+    <color name="turn_selected_text_color">#000000</color>
+    <color name="increment_decrement_background_color">#1AFFFFFF</color>
+    <color name="app_bar_background">?attr/colorSurface</color>
+</resources>

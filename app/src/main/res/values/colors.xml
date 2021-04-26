@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="divider_color">#33000000</color>
+    <color name="common_text_color">#000000</color>
+    <color name="primary_light">#b794f6</color>
+    <color name="colorAccent">#66BB6A</color>
+    <color name="current_game_end_of_turn_background">#333E3E3E</color>
+    <color name="turn_selected_text_color">#FFFFFF</color>
+    <color name="turn_card_stroke_color">#1AFFFFFF</color>
+    <color name="increment_decrement_background_color">#0D000000</color>
+    <color name="app_bar_background">?attr/colorPrimary</color>
+</resources>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/current_game_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorBackground"
+    android:transitionName="@string/played_games_new_game_to_current_game_transition_name">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/current_game_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/current_game_collapsing_toolbar"
+            style="@style/CollapsingToolbarLayout"
+            android:layout_width="match_parent"
+            app:title="Trenutna Partija">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/current_game_toolbar"
+                style="@style/Toolbar"
+                android:layout_width="match_parent"
+                app:navigationIcon="@drawable/ic_arrow_back_24" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/current_game_header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutDescription="@xml/fragment_current_game_scene"
+            app:layout_collapseMode="pin"
+            tools:showPaths="true">
+
+            <TextView
+                android:id="@+id/current_game_mi_label"
+                style="@style/ScoreHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="MI" />
+
+            <TextView
+                android:id="@+id/current_game_vi_label"
+                style="@style/ScoreHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="VI" />
+
+            <TextView
+                android:id="@+id/current_game_mi_score"
+                style="@style/ScoreHeaderScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                tools:text="789" />
+
+            <TextView
+                android:id="@+id/current_game_vi_score"
+                style="@style/ScoreHeaderScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                tools:text="123" />
+
+            <ImageView
+                android:id="@+id/current_game_total_score_mi_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="@drawable/current_game_total_score_badge_background" />
+
+            <ImageView
+                android:id="@+id/current_game_total_score_vi_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:background="@drawable/current_game_total_score_badge_background" />
+
+            <TextView
+                android:id="@+id/current_game_total_score_mi"
+                style="@style/CurrentGameTotalScoreBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/current_game_total_score_vi"
+                style="@style/CurrentGameTotalScoreBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                tools:text="1" />
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/current_game_turn_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        tools:listitem="@layout/item_played_games_list" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/current_game_new_turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:transitionName="@string/current_game_to_turn_container_transition_name"
+        app:layout_behavior="com.google.android.material.floatingactionbutton.FloatingActionButton$Behavior"
+        app:srcCompat="@drawable/ic_edit_24" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

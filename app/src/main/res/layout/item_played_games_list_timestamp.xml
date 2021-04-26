@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:cardBackgroundColor="@color/primary_light"
+        app:cardCornerRadius="4dp"
+        app:contentPaddingBottom="4dp"
+        app:contentPaddingLeft="8dp"
+        app:contentPaddingRight="8dp"
+        app:contentPaddingTop="4dp">
+
+        <TextView
+            android:id="@+id/item_played_games_list_timestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="8 Aug, 2020" />
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>
+

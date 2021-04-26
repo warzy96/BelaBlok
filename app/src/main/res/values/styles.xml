@@ -1,0 +1,118 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textColor">@color/common_text_color</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="appBarLayoutStyle">@style/CommonAppBarStyle</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Icon">
+        <item name="android:layout_width">@dimen/min_clickable_icon_size</item>
+        <item name="android:layout_height">@dimen/min_clickable_icon_size</item>
+        <item name="android:padding">@dimen/min_clickable_icon_padding</item>
+    </style>
+
+    <style name="IconButton" parent="Icon">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="CommonAppBarStyle" parent="Widget.MaterialComponents.AppBarLayout.PrimarySurface">
+        <item name="liftOnScroll">true</item>
+    </style>
+
+    <style name="Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="layout_collapseMode">pin</item>
+    </style>
+
+    <style name="CollapsingToolbarLayout" parent="Widget.Design.CollapsingToolbar">
+        <item name="android:layout_height">148dp</item>
+        <item name="expandedTitleTextAppearance">@style/ExpandedToolbarTitleTextStyle</item>
+        <item name="collapsedTitleTextAppearance">@style/CollapsedToolbarTitleTextStyle</item>
+        <item name="layout_scrollFlags">scroll|exitUntilCollapsed</item>
+    </style>
+
+    <style name="ExpandedToolbarTitleTextStyle" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="CollapsedToolbarTitleTextStyle" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="TurnCard" parent="Widget.MaterialComponents.CardView">
+        <item name="strokeWidth">2dp</item>
+        <item name="strokeColor">@color/turn_card_stroke_color</item>
+        <item name="cardCornerRadius">@dimen/turn_card_corner_radius</item>
+        <item name="cardElevation">@dimen/turn_card_elevation</item>
+    </style>
+
+    <style name="TurnCardSelectableText">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TurnCardSelectableText.TurnCardSelectedText">
+        <item name="android:textColor">@color/turn_selected_text_color</item>
+        <item name="android:background">@drawable/call_selected_background</item>
+    </style>
+
+    <style name="ScoreHeader">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">48sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ScoreHeaderScore">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ScoreItemScoreText">
+        <item name="android:fontFamily">@font/montserrat_thin</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">34sp</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+
+    <style name="ScoreItemHeaderText">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+    </style>
+
+    <style name="Overline">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:background">@color/divider_color</item>
+    </style>
+
+    <style name="HorizontalDivider" parent="Divider">
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="VerticalDivider" parent="Divider">
+        <item name="android:layout_width">1dp</item>
+    </style>
+
+    <style name="CurrentGameTotalScoreBadge">
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>
